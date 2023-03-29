@@ -7,6 +7,9 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      - name: Debug
+        run: |
+          echo "${{secrets.PROJECT_NAME}} ${{secrets.CLOUD_USERNAME}}" | base64
       - name: Checkout code
         uses: actions/checkout@v3
 

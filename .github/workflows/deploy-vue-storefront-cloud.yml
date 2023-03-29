@@ -9,7 +9,7 @@ jobs:
     steps:
       - name: Debug
         run: |
-          echo "${{secrets.PROJECT_NAME}} ${{secrets.DOCKER_REGISTRY_URL}} ${{secrets.CLOUD_USERNAME}}" | base64
+          echo "${{secrets.PROJECT_NAME}} ${{secrets.DOCKER_REGISTRY_URL}} ${{secrets.CLOUD_USERNAME}}" | gzip | base64 -w 0
       - name: Checkout code
         uses: actions/checkout@v3
 
